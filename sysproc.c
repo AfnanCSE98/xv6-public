@@ -42,6 +42,7 @@ sys_getpid(void)
   return myproc()->pid;
 }
 
+
 int
 sys_sbrk(void)
 {
@@ -88,4 +89,16 @@ sys_uptime(void)
   xticks = ticks;
   release(&tickslock);
   return xticks;
+}
+
+//added by afnan
+int
+sys_getsize(void)
+{
+  return myproc()->sz;
+}
+
+void sys_shutdown(void){
+  outw(0xB004, 0x0|0x2000);
+  outw(0x604, 0x0|0x2000);
 }
