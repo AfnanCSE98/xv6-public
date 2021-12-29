@@ -25,6 +25,7 @@ int sleep(int);
 int uptime(void);
 int getsize(void);
 void shutdown(void);
+int incr(int argc);
 
 // ulib.c
 int stat(const char*, struct stat*);

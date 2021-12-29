@@ -7,6 +7,8 @@
 #include "mmu.h"
 #include "proc.h"
 
+#include "fcntl.h"
+
 int
 sys_fork(void)
 {
@@ -101,4 +103,15 @@ sys_getsize(void)
 void sys_shutdown(void){
   outw(0xB004, 0x0|0x2000);
   outw(0x604, 0x0|0x2000);
+}
+
+//give command : incr 7
+//it will output 8
+int sys_incr(void){
+  int num;
+  argint(0,&num); //retrieving first argument
+
+  //cprintf("%d - Inside system call!",argc);
+
+  return num + 1;
 }

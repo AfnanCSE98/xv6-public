@@ -22,3 +22,4 @@
 #define SYS_close  21
 #define SYS_getsize 22
 #define SYS_shutdown 23
+#define SYS_incr   24
