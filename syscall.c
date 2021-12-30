@@ -82,6 +82,7 @@ argstr(int n, char **pp)
   return fetchstr(addr, pp);
 }
 
+
 extern int sys_chdir(void);
 extern int sys_close(void);
 extern int sys_dup(void);
@@ -106,6 +107,7 @@ extern int sys_uptime(void);
 extern int sys_getsize(void);//returns size of a running process
 extern int sys_shutdown(void);
 extern int sys_incr(void);
+extern int sys_add(void);
 
 
 static int (*syscalls[])(void) = {
@@ -133,6 +135,7 @@ static int (*syscalls[])(void) = {
 [SYS_getsize] sys_getsize,
 [SYS_shutdown] sys_shutdown,
 [SYS_incr]    sys_incr,
+[SYS_add]     sys_add,
 };
 
 

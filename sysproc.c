@@ -6,8 +6,9 @@
 #include "memlayout.h"
 #include "mmu.h"
 #include "proc.h"
-
+#include <stddef.h>
 #include "fcntl.h"
+#include "stat.h"
 
 int
 sys_fork(void)
@@ -109,9 +110,22 @@ void sys_shutdown(void){
 //it will output 8
 int sys_incr(void){
   int num;
-  argint(0,&num); //retrieving first argument
+  argint(0,&num); //retrieving first integer argument
 
   //cprintf("%d - Inside system call!",argc);
 
   return num + 1;
+}
+
+int sys_add(void){
+  struct mystat *ct;
+  argptr (0 , (void*)&ct ,sizeof(*ct));
+  //cprintf("%d ta number\n" , ct->sz);
+  int s = 0;
+  int i;
+  for(i=0;i<ct->sz;i++){
+    s+=ct->nums[i];
+    //cprintf("%d " , ct->nums[i]);
+  }
+  return s; 
 }

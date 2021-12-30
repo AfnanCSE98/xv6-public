@@ -23,3 +23,4 @@
 #define SYS_getsize 22
 #define SYS_shutdown 23
 #define SYS_incr   24
+#define SYS_add    25

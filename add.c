@@ -1,7 +1,7 @@
 #include "types.h"
 #include "user.h"
 #include "fcntl.h"
-
+#include "stat.h"
 
 //added by afnan
 //converts string to int
@@ -32,10 +32,14 @@ int my_atoi(char *str)
     return (val * sign);
 }
 
-
-//give command : incr 7
-//it will output 8
 int main(int argc , char * argv[]){
-    printf(1 , "%d\n" , incr(my_atoi(argv[1])));
+    struct mystat *ct = malloc (sizeof(struct mystat));
+    ct->sz = argc - 1;
+    int i;
+    for(i = 1;i<argc;i++){
+        //printf(1,"%d->" , my_atoi(argv[i]));
+        ct->nums[i-1] = my_atoi(argv[i]);
+    }
+    printf(1 , "%d\n" , add(ct));
     exit();
 }
