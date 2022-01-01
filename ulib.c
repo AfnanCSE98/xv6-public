@@ -81,15 +81,33 @@ stat(const char *n, struct stat *st)
   return r;
 }
 
+//modified by Afnan to handle neg numbers
 int
 atoi(const char *s)
 {
-  int n;
+    int i;
+    int sign;
+    int val;
+    int nbr;
 
-  n = 0;
-  while('0' <= *s && *s <= '9')
-    n = n*10 + *s++ - '0';
-  return n;
+    i = 0;
+    sign = 1;
+    val = 0;
+    nbr = 0;
+    if (s[0] == '-')
+    {
+        sign = -1;
+        s++;
+    }
+    i = 0;
+    while(s[i] >= '0' && s[i] <= '9' && s[i] != '\0')
+    {
+        nbr = (int) (s[i] - '0');
+        val = (val * 10) + nbr;
+        i++;
+    }
+    i++;
+    return (val * sign);
 }
 
 void*

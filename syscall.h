@@ -24,3 +24,4 @@
 #define SYS_shutdown 23
 #define SYS_incr   24
 #define SYS_add    25
+#define SYS_substr 26

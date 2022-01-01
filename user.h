@@ -28,6 +28,7 @@ int getsize(void);
 void shutdown(void);
 int incr(int);
 int add(struct mystat*);
+char* substr(char* , int , int);
 
 // ulib.c
 int stat(const char*, struct stat*);

@@ -120,7 +120,6 @@ int sys_incr(void){
 int sys_add(void){
   struct mystat *ct;
   argptr (0 , (void*)&ct ,sizeof(*ct));
-  //cprintf("%d ta number\n" , ct->sz);
   int s = 0;
   int i;
   for(i=0;i<ct->sz;i++){
@@ -128,4 +127,24 @@ int sys_add(void){
     //cprintf("%d " , ct->nums[i]);
   }
   return s; 
+}
+//command : substr alupotol 3 5
+//output  : potol
+char* sys_substr(void){
+  char *str;
+  int start_idx , len;
+  
+  argint(1 , &start_idx);
+  argint(2 , &len);
+  argstr(0 , &str);
+  char *s = &str[start_idx];
+  int i;
+  int k = 1;
+  
+  for(i = start_idx+1 ; i < start_idx+len ; i++){
+    s[k++] = str[i];
+    
+  }
+  //cprintf("%s\n" , s);
+  return s;
 }
