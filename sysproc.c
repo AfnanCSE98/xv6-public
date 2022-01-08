@@ -148,3 +148,27 @@ char* sys_substr(void){
   //cprintf("%s\n" , s);
   return s;
 }
+
+//command : sort 3 5 2 4
+//output : 2 3 4 5
+int* sys_sort(void){
+  struct mystat *ct;
+  argptr (0 , (void*)&ct ,sizeof(*ct));
+  int n = ct->sz;
+ 
+  int temp, j, k;
+   
+  for (j = 0; j < n; ++j)
+  {
+    for (k = j + 1; k < n; ++k)
+    {
+        if (ct->nums[j] > ct->nums[k])
+        {
+          temp = ct->nums[j];
+          ct->nums[j] = ct->nums[k];
+          ct->nums[k] = temp;
+        }
+    }
+  }
+  return ct->nums;
+}

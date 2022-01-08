@@ -109,6 +109,7 @@ extern int sys_shutdown(void);
 extern int sys_incr(void);
 extern int sys_add(void);
 extern int sys_substr(void);
+extern int sys_sort(void);
 
 
 static int (*syscalls[])(void) = {
@@ -138,6 +139,7 @@ static int (*syscalls[])(void) = {
 [SYS_incr]    sys_incr,
 [SYS_add]     sys_add,
 [SYS_substr]  sys_substr,
+[SYS_sort]    sys_sort,
 };
 
 

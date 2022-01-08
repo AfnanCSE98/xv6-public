@@ -29,6 +29,7 @@ void shutdown(void);
 int incr(int);
 int add(struct mystat*);
 char* substr(char* , int , int);
+int* sort(struct mystat*);
 
 // ulib.c
 int stat(const char*, struct stat*);
@@ -43,3 +44,5 @@ void* memset(void*, int, uint);
 void* malloc(uint);
 void free(void*);
 int atoi(const char*);
+void sort_numbers_ascending(int*, int );
+

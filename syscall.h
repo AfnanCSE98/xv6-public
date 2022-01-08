@@ -25,3 +25,4 @@
 #define SYS_incr   24
 #define SYS_add    25
 #define SYS_substr 26
+#define SYS_sort   27
