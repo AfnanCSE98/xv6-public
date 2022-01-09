@@ -8,11 +8,9 @@ int main(int argc , char * argv[]){
     ct->sz = argc - 1;
     int i;
     for(i = 1;i<argc;i++){
-        //printf(1,"%d->" , atoi(argv[i]));
         ct->nums[i-1] = atoi(argv[i]);
     }
 
-    //struct mystat s_ct = malloc(sizeof(struct mystat));
     int *sorted_nums = sort(ct);
 
     for(int i=0;i<ct->sz;i++){
